@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     socket.connect(new InetSocketAddress(ip, port), 5000);
                     OutputStream outputStream=socket.getOutputStream();
                     String str=et.getText().toString();
-                    str=str.replace("#","\r\n");
+                    str=str.replace("\n","#");
                     outputStream.write(str.getBytes(StandardCharsets.UTF_8));
                     outputStream.flush();
                     outputStream.close();
